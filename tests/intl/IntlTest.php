@@ -21,32 +21,44 @@ class IntlTest extends TestCase
 
     public function testIntlEnglish()
     {
-        $collator1 = new Collator('en_US');
-        $local1   = $collator1->getLocale(Locale::VALID_LOCALE);
-        $this->assertSame('en_US', $local1);
+        $collator = new Collator('en_US');
+        $locale = $collator->getLocale(Locale::VALID_LOCALE);
+        $this->assertSame('en_US', $locale);
 
-        $formatter2 = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
-        $this->assertSame('123,456', $formatter2->format(123456));
+        $formatter = new NumberFormatter('en_US', NumberFormatter::DECIMAL);
+        $this->assertSame('123,456', $formatter->format(123456));
     }
 
     public function testIntlAustrian()
     {
-        $collator2 = new Collator('de_AT');
-        $local2   = $collator2->getLocale(Locale::VALID_LOCALE);
-        $this->assertSame('de_AT', $local2);
+        $collator = new Collator('de_AT');
+        $locale = $collator->getLocale(Locale::VALID_LOCALE);
+        $this->assertSame('de_AT', $locale);
 
-        $this->markTestIncomplete();
-        $formatter1 = new NumberFormatter('de_AT', NumberFormatter::DECIMAL);
-        $this->assertSame('123.456', $formatter1->format(123456));
+        $formatter = new NumberFormatter('de_AT', NumberFormatter::DECIMAL);
+        # Dot as decimal separator for ICU <= 55, non-breaking space for later ICU versions
+        $this->assertTrue(in_array($formatter->format(123456), ['123.456', "123\xc2\xa0456"]));
     }
 
     public function testIntlGerman()
     {
-        $collator3 = new Collator('de_DE');
-        $local3   = $collator3->getLocale(Locale::VALID_LOCALE);
-        $this->assertSame('de_DE', $local3);
+        $collator = new Collator('de_DE');
+        $locale = $collator->getLocale(Locale::VALID_LOCALE);
+        # de_DE on PHP5, de on PHP7
+        $this->assertTrue(in_array($locale, ['de_DE', 'de']));
 
-        $formatter3 = new NumberFormatter('de_DE', NumberFormatter::DECIMAL);
-        $this->assertSame('123.456', $formatter3->format(123456));
+        $formatter = new NumberFormatter('de_DE', NumberFormatter::DECIMAL);
+        $this->assertSame('123.456', $formatter->format(123456));
+    }
+
+    /**
+     * The non-breakable space as group separator (as defined in ICU56+ for Austria) can cause
+     * problems if the application can't deal with such formatted numbers.
+     */
+    public function testDefaultLocaleHasNoNbspAsGroupSeparator()
+    {
+        $defaultLocale = Locale::getDefault();
+        $formatter = new NumberFormatter($defaultLocale, NumberFormatter::DECIMAL);
+        $this->assertNotSame("\xc2\xa", $formatter->getSymbol(NumberFormatter::GROUPING_SEPARATOR_SYMBOL));
     }
 }
