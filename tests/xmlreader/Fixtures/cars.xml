@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <cars>
+        <renault>
+            <model>Clio</model>
+            <color>Black</color>
+        </renault>
+        <renault>
+            <model>Megane</model>
+            <color>White</color>
+        </renault>
+        <renault>
+            <model>Megane Rs</model>
+            <color>Red</color>
+        </renault>
+    </cars>

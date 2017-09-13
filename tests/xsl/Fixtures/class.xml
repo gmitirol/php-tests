@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <class>
+        <student>
+            <first_name>Jack</first_name>
+            <last_name>Daniels</last_name>
+        </student>
+        <student>
+            <first_name>Harry</first_name>
+            <last_name>Potter</last_name>
+        </student>
+        <student>
+            <first_name>Rebecca</first_name>
+            <last_name>Steel</last_name>
+        </student>
+        <teacher>
+            <first_name>Ron</first_name>
+            <last_name>Bean</last_name>
+        </teacher>
+    </class>
