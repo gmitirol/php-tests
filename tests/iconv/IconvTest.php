@@ -23,13 +23,13 @@ class IconvTest extends TestCase
      */
     public function testIconvSetGetEncoding()
     {
-        $utf8 = iconv_set_encoding('internal_encoding', 'UTF-8');
+        $utf8 = @iconv_set_encoding('internal_encoding', 'UTF-8');
         $this->assertSame(true, $utf8);
-        $this->assertSame('UTF-8', iconv_get_encoding('internal_encoding'));
+        $this->assertSame('UTF-8', @iconv_get_encoding('internal_encoding'));
 
-        $iso = iconv_set_encoding('output_encoding', 'ISO-8859-1');
+        $iso = @iconv_set_encoding('output_encoding', 'ISO-8859-1');
         $this->assertSame(true, $iso);
-        $this->assertSame('ISO-8859-1', iconv_get_encoding('output_encoding'));
+        $this->assertSame('ISO-8859-1', @iconv_get_encoding('output_encoding'));
     }
 
     public function testIconvTranslit()
