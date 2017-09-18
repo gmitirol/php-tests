@@ -36,6 +36,7 @@
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-mbstring": "*",
+        "ext-memcached": "*",
         "ext-mysqli": "*",
         "ext-shmop": "*",
         "ext-tokenizer": "*",
