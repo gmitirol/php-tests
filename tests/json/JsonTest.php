@@ -18,6 +18,8 @@ class JsonTest extends TestCase
 
     /**
      * Decodes a JSON string.
+     *
+     * @group php_base
      */
     public function testJsonDecode()
     {
@@ -28,6 +30,8 @@ class JsonTest extends TestCase
 
     /**
      * Returns the JSON representation of a value.
+     *
+     * @group php_base
      */
     public function testJsonEncode()
     {

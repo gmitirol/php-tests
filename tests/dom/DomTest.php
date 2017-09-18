@@ -18,6 +18,9 @@ class DomTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testImportSimplexml()
     {
         $xml = simplexml_load_string('<books><book><title>blah</title></book></books>');

@@ -16,6 +16,9 @@ class TokenizerTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testTokenizerFunctions()
     {
         $tokens = token_get_all('<?php echo; ?>');

@@ -17,6 +17,9 @@ class XmlreaderTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testXMLReaderOpen()
     {
         $reader = new XMLReader();
@@ -25,6 +28,9 @@ class XmlreaderTest extends TestCase
         $this->assertTrue($file);
     }
 
+    /**
+     * @group php_base
+     */
     public function testXMLReaderReadInnerXml()
     {
         $xmlReader = new XMLReader();

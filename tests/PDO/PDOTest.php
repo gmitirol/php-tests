@@ -36,6 +36,10 @@ class PDOTest extends TestCase
         }
     }
 
+    /**
+     * @group php_mysql
+     * @group external_service
+     */
     public function testPDOInstance()
     {
         $dsn = sprintf('mysql:dbname=%s;port=%s;host=%s', self::$mySqlDb, self::$mySqlPort, self::$mySqlHost);

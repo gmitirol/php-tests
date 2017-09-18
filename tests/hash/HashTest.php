@@ -16,6 +16,9 @@ class HashTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testHashMd5()
     {
         $result = hash('md5', 'The quick brown fox jumped over the lazy dog.', false);
@@ -23,18 +26,27 @@ class HashTest extends TestCase
         $this->assertSame('5c6ffbdd40d9556b73a21e63c3e0e904', $result);
     }
 
+    /**
+     * @group php_base
+     */
     public function testSha1()
     {
         $result = hash('sha1', 'The quick brown fox jumped over the lazy dog.', false);
         $this->assertSame('c0854fb9fb03c41cce3802cb0d220529e6eef94e', $result);
     }
 
+    /**
+     * @group php_base
+     */
     public function testSha256()
     {
         $result = hash('sha256', 'The quick brown fox jumped over the lazy dog.', false);
         $this->assertSame('68b1282b91de2c054c36629cb8dd447f12f096d3e3c587978dc2248444633483', $result);
     }
 
+    /**
+     * @group php_base
+     */
     public function testSha512()
     {
         $result = hash('sha512', 'The quick brown fox jumped over the lazy dog.', false);

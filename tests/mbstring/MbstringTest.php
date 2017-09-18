@@ -16,31 +16,49 @@ class MbstringTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrtoupper()
     {
         $this->assertSame('GODZILLA', mb_strtoupper('godzilla'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrtolower()
     {
         $this->assertSame('invisible guy', mb_strtolower('INVISIBLE Guy'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrlen()
     {
         $this->assertSame(7, mb_strlen('Vrlazić'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbSubstr()
     {
         $this->assertSame('CHÁ', mb_substr('CHÁRÊCTËRS', 0, 3));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbSubstrCount()
     {
         $this->assertSame(1, mb_substr_count('this is a  Ëxtra test', 'Ë'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbSplit()
     {
         $this->assertSame(
@@ -49,43 +67,69 @@ class MbstringTest extends TestCase
         );
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrtoupperSpecialCharacters()
     {
         $this->assertSame('ŽĆŠĐČ', mb_strtoupper('žćšđč'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrtolowerSpecialCharacters()
     {
         $this->assertSame('pršljenčić', mb_strtolower('PRŠLJENČIĆ'));
     }
 
-    // Greek Alphabet
+    /**
+     * Greek Alphabet
+     *
+     * @group php_base
+     */
     public function testMbStrwidth()
     {
         $this->assertSame(12, mb_strwidth('βγΔδεζηΘκΛλμ'));
     }
 
-    // Serbian Cyrillic alphabet
+    /**
+     * Serbian Cyrillic alphabet
+     *
+     * @group php_base
+     */
     public function testMbStrstrFalseCase()
     {
         $this->assertSame(false, mb_strstr('АБВГДЂЕ  ЖЗИЈКЛ ЉМНЊОПРСТЋУФЦЧЏШ', 'test'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrstrValidCase()
     {
         $this->assertSame('genius', mb_strstr('hugo hackerman is genius', 'genius'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrrpos()
     {
         $this->assertSame(6, mb_strrpos('ふーばー, ふー', 'ふー'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbStrcut()
     {
         $this->assertSame('R OH', mb_strcut('I_R OHA', 2, 4));
     }
 
+    /**
+     * @group php_base
+     */
     public function testMbConvertCase()
     {
         $this->assertSame(

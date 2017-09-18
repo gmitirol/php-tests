@@ -21,6 +21,8 @@ class SimpleXMLTest extends TestCase
 
     /**
      * Check if DOM node is changed to SimpleXMLElement.
+     *
+     * @group php_base
      */
     public function testImportDom()
     {
@@ -30,6 +32,9 @@ class SimpleXMLTest extends TestCase
         $this->assertInstanceOf(SimpleXMLElement::class, $s);
     }
 
+    /**
+     * @group php_base
+     */
     public function testLoadString()
     {
         $string = <<<XML
@@ -44,6 +49,9 @@ XML;
         $this->assertInstanceOf(SimpleXMLElement::class, $xml);
     }
 
+    /**
+     * @group php_base
+     */
     public function testLoadFile()
     {
         if (file_exists(__DIR__ . '/Fixtures/my.xml')) {

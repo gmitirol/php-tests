@@ -16,6 +16,9 @@ class GdTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetImageSizeFromString()
     {
         $mypicture = __DIR__ . '/Fixtures/moon.jpg';
@@ -24,6 +27,9 @@ class GdTest extends TestCase
         $this->assertSame(8, $size['bits']);
     }
 
+    /**
+     * @group php_base
+     */
     public function testImageScale()
     {
         $image =  imagecreatefromjpeg(__DIR__ . '/Fixtures/moon.jpg');

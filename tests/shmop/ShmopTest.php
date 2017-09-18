@@ -16,6 +16,9 @@ class ShmopTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testShmop()
     {
         /**

@@ -18,16 +18,25 @@ class DateTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testCheckDateInvalid()
     {
         $this->assertSame(false, checkdate(2, 29, 2017));
     }
 
+    /**
+     * @group php_base
+     */
     public function testCheckDateValid()
     {
         $this->assertSame(true, checkdate(1, 29, 2017));
     }
 
+    /**
+     * @group php_base
+     */
     public function testDateCreateAndDateFormat()
     {
         $date = new DateTime('06/18/2016');
@@ -37,6 +46,8 @@ class DateTest extends TestCase
 
     /**
      * This function returns FALSE if the timezone_identifier isn't valid, or TRUE otherwise.
+     *
+     * @group php_base
      */
     public function testDateDefaultTimezoneSet()
     {
@@ -44,6 +55,9 @@ class DateTest extends TestCase
         $this->assertTrue($zone);
     }
 
+    /**
+     * @group php_base
+     */
     public function testDateParse()
     {
         $inputDate = "March 2014";

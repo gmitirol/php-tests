@@ -18,6 +18,9 @@ class XmlwriterTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testXMLWriter()
     {
         $writer = new XMLWriter();

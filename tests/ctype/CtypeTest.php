@@ -16,6 +16,9 @@ class CtypeTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testCtypeAlnum()
     {
         $testString1 = 'AbC23d1zyZ945';
@@ -25,6 +28,9 @@ class CtypeTest extends TestCase
         $this->assertFalse(ctype_alnum($testString2));
     }
 
+    /**
+     * @group php_base
+     */
     public function testCtypeAlpha()
     {
         $testString1 = 'Letters123';
@@ -34,6 +40,9 @@ class CtypeTest extends TestCase
         $this->assertTrue(ctype_alpha($testString2));
     }
 
+    /**
+     * @group php_base
+     */
     public function testCtypeDigit()
     {
         $numeric1 = '3046';
@@ -46,6 +55,9 @@ class CtypeTest extends TestCase
         $this->assertFalse(ctype_digit($numeric3));
     }
 
+    /**
+     * @group php_base
+     */
     public function testCtypeUpper()
     {
         $upperCaseCharacters1 = 'DONGIOVANNI';

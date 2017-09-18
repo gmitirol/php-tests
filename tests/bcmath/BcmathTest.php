@@ -16,6 +16,9 @@ class BcmathTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testBcadd()
     {
         $firstNumber = '24823.234567';
@@ -27,6 +30,9 @@ class BcmathTest extends TestCase
         $this->assertSame('494824.83356', $result2);
     }
 
+    /**
+     * @group php_base
+     */
     public function testBccomp()
     {
         $firstNumber = '182111';
@@ -40,6 +46,9 @@ class BcmathTest extends TestCase
         $this->assertSame(-1, $result2);
     }
 
+    /**
+     * @group php_base
+     */
     public function testBcdiv()
     {
         $firstNumber = '45000028';
@@ -53,6 +62,9 @@ class BcmathTest extends TestCase
         $this->assertSame('48.2410', $result2);
     }
 
+    /**
+     * @group php_base
+     */
     public function testBcmod()
     {
         $firstNumber = '8341752.182';
@@ -61,6 +73,9 @@ class BcmathTest extends TestCase
         $this->assertSame('3341752', $result);
     }
 
+    /**
+     * @group php_base
+     */
     public function testBcmul()
     {
         $firstNumber = '25000451782.34';
@@ -74,6 +89,9 @@ class BcmathTest extends TestCase
         $this->assertSame('1008955148868.65', $result2);
     }
 
+    /**
+     * @group php_base
+     */
     public function testBcpow()
     {
         $firstNumber = '36468.42';

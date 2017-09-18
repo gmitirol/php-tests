@@ -20,6 +20,8 @@ class IconvTest extends TestCase
      * Returns the current value of the internal configuration variable if successful or FALSE on failure.
      *
      * @See http://php.net/manual/en/function.iconv-get-encoding.php
+     *
+     * @group php_base
      */
     public function testIconvSetGetEncoding()
     {
@@ -32,6 +34,9 @@ class IconvTest extends TestCase
         $this->assertSame('ISO-8859-1', @iconv_get_encoding('output_encoding'));
     }
 
+    /**
+     * @group php_base
+     */
     public function testIconvTranslit()
     {
         $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Zižičć.Followed by Žluťoučký kůň';
@@ -40,6 +45,9 @@ class IconvTest extends TestCase
         $this->assertSame('Weiss, Gobel, Weiss, Gothe, und Zizicc.Followed by Zlutoucky kun', $converted);
     }
 
+    /**
+     * @group php_base
+     */
     public function testIconvIgnore()
     {
         $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Zižičć.Followed by Žluťoučký kůň';
@@ -48,6 +56,9 @@ class IconvTest extends TestCase
         $this->assertSame('Wei, Gbel, Weiss, Gthe, und Zii.Followed by luouk k', $converted);
     }
 
+    /**
+     * @group php_base
+     */
     public function testIconvEmpty()
     {
         if (!extension_loaded('mbstring')) {

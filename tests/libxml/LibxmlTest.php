@@ -20,6 +20,8 @@ class LibxmlTest extends TestCase
 
     /**
      * Invalid XML
+     *
+     * @group php_base
      */
     public function testLibxmlGetErrors()
     {
@@ -42,6 +44,8 @@ XML;
 
     /**
      * Valid XML
+     *
+     * @group php_base
      */
     public function testLibxmlGetErrorsFalse()
     {

@@ -16,6 +16,9 @@ class ExifTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testExifImagetype()
     {
         $picture1 = __DIR__ . '/Fixtures/1.png';

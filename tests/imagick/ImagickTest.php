@@ -18,12 +18,18 @@ class ImagickTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetNumberImages()
     {
         $document = new Imagick(__DIR__ . '/Fixtures/my.pdf');
         $this->assertSame(3, $document->getNumberImages());
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetFilenamePdf()
     {
         $document = new Imagick(__DIR__ . '/Fixtures/my.pdf');
@@ -31,6 +37,9 @@ class ImagickTest extends TestCase
         $this->assertSame('my.pdf', pathinfo($name, PATHINFO_BASENAME));
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetFilenameJpg()
     {
         $document = new Imagick(__DIR__ . '/Fixtures/moon.jpg');
@@ -38,6 +47,9 @@ class ImagickTest extends TestCase
         $this->assertSame('moon.jpg', pathinfo($name, PATHINFO_BASENAME));
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetImageGeometry()
     {
         $img = new Imagick(__DIR__ . '/Fixtures/moon.jpg');
@@ -46,12 +58,18 @@ class ImagickTest extends TestCase
         $this->assertSame(1050, $geo['height']);
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetImageFormat()
     {
         $img = new Imagick(__DIR__ . '/Fixtures/moon.jpg');
         $this->assertSame('JPEG', $img->getImageFormat());
     }
 
+    /**
+     * @group php_base
+     */
     public function testResizeImage()
     {
         $img = new Imagick(__DIR__ . '/Fixtures/moon.jpg');
@@ -62,6 +80,8 @@ class ImagickTest extends TestCase
 
     /**
      * Checking size of image, represented in bytes.
+     *
+     * @group php_base
      */
     public function testGetImageLength()
     {
@@ -69,6 +89,9 @@ class ImagickTest extends TestCase
         $this->assertSame(116787, $img->getImageLength());
     }
 
+    /**
+     * @group php_base
+     */
     public function testGetImageProperties()
     {
         $document = new Imagick(__DIR__ . '/Fixtures/my.pdf');

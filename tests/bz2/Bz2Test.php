@@ -16,6 +16,9 @@ class Bz2Test extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testBz2()
     {
         $filename = __DIR__ . 'example.bz2';

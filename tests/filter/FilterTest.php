@@ -16,7 +16,11 @@ class FilterTest extends TestCase
         }
     }
 
-    // Validating  valid, invalid email address and integers.
+    /**
+     * Validating valid, invalid email address and integers.
+     *
+     * @group php_base
+     */
     public function testFilterVar()
     {
         // Invalid email.
@@ -26,7 +30,6 @@ class FilterTest extends TestCase
         // Valid email.
         $email2 = 'joe.hackerman@gmail.com';
         $this->assertSame('joe.hackerman@gmail.com', filter_var($email2, FILTER_VALIDATE_EMAIL));
-
 
         // Valid int.
         $integer1 = '25';

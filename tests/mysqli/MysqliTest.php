@@ -36,6 +36,10 @@ class MysqliTest extends TestCase
         }
     }
 
+    /**
+     * @group php_mysql
+     * @group external_service
+     */
     public function testMysqliConnection()
     {
         $mysqli = new mysqli(

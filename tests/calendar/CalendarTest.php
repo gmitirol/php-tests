@@ -16,6 +16,9 @@ class CalendarTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testCalDaysInMonth()
     {
         // Asserting that month July in 1996. had 31 days by Gregorian calendar.
@@ -24,6 +27,8 @@ class CalendarTest extends TestCase
 
     /**
      * Checking calendar info to find out which Calendar year is valid one.
+     * 
+     * @group php_base
      */
     public function testCalInfo()
     {
@@ -32,6 +37,9 @@ class CalendarTest extends TestCase
         $this->assertSame('Jewish', cal_info(2)['calname']);
     }
 
+    /**
+     * @group php_base
+     */
     public function testEasterDate()
     {
         $this->assertSame('2017-04-16', date('Y-m-d', easter_date(2017)));

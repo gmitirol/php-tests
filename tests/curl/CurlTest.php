@@ -27,7 +27,12 @@ class CurlTest extends TestCase
         }
     }
 
-    // Testing connection
+    /**
+     * Testing connection
+     *
+     * @group php_https
+     * @group external_service
+     */
     public function testCurlExec()
     {
         $ch = curl_init();

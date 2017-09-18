@@ -18,6 +18,8 @@ class FileinfoTest extends TestCase
 
     /**
      * Checking type of content from 2 different files.
+     *
+     * @group php_base
      */
     public function testMimeContentType()
     {

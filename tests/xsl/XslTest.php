@@ -19,6 +19,9 @@ class XslTest extends TestCase
         }
     }
 
+    /**
+     * @group php_base
+     */
     public function testXSLTProcessorConstruct()
     {
         $xsldoc = new DOMDocument();
