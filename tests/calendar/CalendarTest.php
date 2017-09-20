@@ -27,7 +27,7 @@ class CalendarTest extends TestCase
 
     /**
      * Checking calendar info to find out which Calendar year is valid one.
-     * 
+     *
      * @group php_base
      */
     public function testCalInfo()
