@@ -1,12 +1,16 @@
 {
     "name": "gmi/php-tests",
-    "license": "proprietary",
+    "license": "LGPL-3.0-only",
     "type": "library",
     "description": "PHP Test Suite",
     "authors": [
         {
         "name": "Nikola Vrlazic",
         "email": "nikola.vrlazic@i-med.ac.at"
+        },
+        {
+        "name": "Andreas Erhard",
+        "email": "andreas.erhard@i-med.ac.at"
         }
     ],
     "require": {

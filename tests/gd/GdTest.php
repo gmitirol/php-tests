@@ -23,7 +23,7 @@ class GdTest extends TestCase
     {
         $mypicture = __DIR__ . '/Fixtures/moon.jpg';
         $size = getimagesize($mypicture);
-        // Asserting that image consits of 8 bits.
+        // Asserting that image has 8 bit color depth per channel.
         $this->assertSame(8, $size['bits']);
     }
 
@@ -34,7 +34,7 @@ class GdTest extends TestCase
     {
         $image =  imagecreatefromjpeg(__DIR__ . '/Fixtures/moon.jpg');
         $imageScale = imagescale($image, 100);
-        // Return true if it is successfull, or false if it is not.
+        // Return true if it is successful, or false if it is not.
         $new = imagejpeg($imageScale, __DIR__ . '/new.jpg', 90);
         $this->assertTrue($new);
 

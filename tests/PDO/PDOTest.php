@@ -55,11 +55,11 @@ class PDOTest extends TestCase
         $pdo->query($sql);
 
         $sql = "INSERT INTO $table (id, firstname, lastname, color)
-                VALUES (1,'Chuck','Norris', 'red');";
+                VALUES (1, 'Chuck', 'Norris', 'red');";
         $pdo->query($sql);
 
         $sql = "INSERT INTO $table (id, firstname, lastname, color)
-                VALUES (2,'Robin','Hood', 'blue');";
+                VALUES (2, 'Robin', 'Hood', 'blue');";
         $pdo->query($sql);
 
         $sql = "SELECT firstname, lastname FROM $table WHERE color=:color";
