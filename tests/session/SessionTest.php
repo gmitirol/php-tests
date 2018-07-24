@@ -18,6 +18,7 @@ class SessionTest extends TestCase
 
     /**
      * @group php_base
+     * @runInSeparateProcess
      */
     public function testSessionFunctions()
     {
@@ -28,18 +29,32 @@ class SessionTest extends TestCase
         $this->assertSame('blue', $_SESSION['favcolor']);
         $this->assertSame('eagle', $_SESSION['favanimal']);
 
-        session_cache_expire(40);
-        $cacheExpire = session_cache_expire();
-        $this->assertSame(40, $cacheExpire);
-
-        session_cache_limiter('private');
-        $cacheLimiter = session_cache_limiter();
-        $this->assertSame('private', $cacheLimiter);
-
         $sessionName = session_name();
         $this->assertSame('PHPSESSID', $sessionName);
 
         @session_destroy();
         session_abort();
+    }
+
+    /**
+     * @group php_base
+     * @runInSeparateProcess
+     */
+    public function testSessionCacheDelimiter()
+    {
+        session_cache_limiter('private');
+        $cacheLimiter = session_cache_limiter();
+        $this->assertSame('private', $cacheLimiter);
+    }
+
+    /**
+     * @group php_base
+     * @runInSeparateProcess
+     */
+    public function testSessionExpiry()
+    {
+        session_cache_expire(40);
+        $cacheExpire = session_cache_expire();
+        $this->assertSame(40, $cacheExpire);
     }
 }

@@ -28,7 +28,6 @@ class SPLTest extends TestCase
         $result = spl_classes();
         $this->assertNotEmpty($result);
         $this->assertArrayHasKey('ArrayIterator', $result);
-        $this->assertArrayHasKey('Countable', $result);
         $this->assertArrayHasKey('SplFileObject', $result);
         $this->assertArrayHasKey('SplObserver', $result);
     }
