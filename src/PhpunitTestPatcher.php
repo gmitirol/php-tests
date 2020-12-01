@@ -49,7 +49,7 @@ class PhpunitTestPatcher
                 $count = 0;
                 $content = str_replace($r, rtrim($r) . ": void\n", $content, $count);
                 if ($count > 0) {
-                    $results[] = sprintf('Adding type hint for %s in %s', $r, $file);
+                    $results[] = sprintf('Adding type hint for %s in %s', rtrim($r), $file);
                 }
             }
 

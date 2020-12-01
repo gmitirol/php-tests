@@ -1,0 +1,24 @@
+<?php
+
+class ExampleTest
+{
+    public static function setUpBeforeClass()
+    {
+        // example A
+    }
+
+    public function setUp()
+    {
+        // example B
+    }
+
+    public function tearDown()
+    {
+        // example C
+    }
+
+    public static function tearDownAfterClass()
+    {
+        // example D
+    }
+}
