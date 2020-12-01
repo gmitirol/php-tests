@@ -10,7 +10,7 @@
  * @package php-tests
  */
 
-namespace Gmi\PhpTests\Tests;
+namespace Gmi\PhpTests;
 
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;

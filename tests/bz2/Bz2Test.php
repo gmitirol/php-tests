@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\bz2;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class Bz2Test extends TestCase
 {

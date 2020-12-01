@@ -1,5 +1,5 @@
 <?php
-namespace Gmi\PhpTests\Tests;
+namespace Gmi\PhpTests;
 
 class ExtensionChecker
 {

@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\tokenizer;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class TokenizerTest extends TestCase
 {

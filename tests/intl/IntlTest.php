@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\intl;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 use Collator;
 use Locale;
 use NumberFormatter;

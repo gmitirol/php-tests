@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\imap;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class ImapTest extends TestCase
 {
