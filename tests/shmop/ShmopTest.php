@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\shmop;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class ShmopTest extends TestCase
 {

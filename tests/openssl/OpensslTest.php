@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\openssl;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class OpensslTest extends TestCase
 {
@@ -43,7 +43,7 @@ class OpensslTest extends TestCase
         $config = ['digest_alg' => 'sha512', 'private_key_bits' => 4096, 'private_key_type' => OPENSSL_KEYTYPE_RSA];
         $privateKey = openssl_pkey_new($config);
         $this->assertNotFalse($privateKey);
-        
+
         // Create a Signed Public Key and Challenge.
         $spkac = openssl_spki_new($privateKey, 'testing');
         $this->assertNotEmpty($spkac);

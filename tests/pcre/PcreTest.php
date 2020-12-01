@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\pcre;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class PcreTest extends TestCase
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Gmi\PhpTests\Tests;
+namespace Gmi\PhpTests;
 
 class ExtensionChecker
 {
@@ -23,6 +23,8 @@ class ExtensionChecker
 
     public function getMessage()
     {
-        return 'The extensions "' . implode(',', $this->extensions) . '" must be installed!';
+        $w = (1 === count($this->extensions)) ? 'extension' : 'extensions';
+
+        return 'The ' . $w . ' "' . implode(',', $this->extensions) . '" must be installed!';
     }
 }

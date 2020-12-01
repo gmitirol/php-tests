@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\iconv;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class IconvTest extends TestCase
 {
@@ -39,7 +39,7 @@ class IconvTest extends TestCase
      */
     public function testIconvTranslit()
     {
-        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Zižičć.Followed by Žluťoučký kůň';
+        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Ziži�?ć.Followed by Žluťou�?ký kůň';
         // Converting 'UTF-8' to 'ASCII'
         $converted = iconv('UTF-8', 'ASCII//TRANSLIT', $utf8example);
         $this->assertSame('Weiss, Gobel, Weiss, Gothe, und Zizicc.Followed by Zlutoucky kun', $converted);
@@ -50,7 +50,7 @@ class IconvTest extends TestCase
      */
     public function testIconvIgnore()
     {
-        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Zižičć.Followed by Žluťoučký kůň';
+        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Ziži�?ć.Followed by Žluťou�?ký kůň';
         // Converting 'UTF-8' to 'ASCII'
         $converted = iconv('UTF-8', 'ASCII//IGNORE', $utf8example);
         $this->assertSame('Wei, Gbel, Weiss, Gthe, und Zii.Followed by luouk k', $converted);

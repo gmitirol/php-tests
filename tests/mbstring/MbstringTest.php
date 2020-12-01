@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\mbstring;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 class MbstringTest extends TestCase
 {
@@ -61,10 +61,12 @@ class MbstringTest extends TestCase
      */
     public function testMbSplit()
     {
+        // @codingStandardsIgnoreStart
         $this->assertSame(
             ['ΤΆΧΙΣΤΗ', 'ΑΛΏΠΗΞ', 'ΒΑΦΉΣ', 'ΨΗΜΈΝΗ', 'ΓΗ,', 'ΔΡΑΣΚΕΛΊΖΕΙ', 'ΥΠΈΡ', 'ΝΩΘΡΟΎ', 'ΚΥΝΌΣ'],
             mb_split('\s', 'ΤΆΧΙΣΤΗ ΑΛΏΠΗΞ ΒΑΦΉΣ ΨΗΜΈΝΗ ΓΗ, ΔΡΑΣΚΕΛΊΖΕΙ ΥΠΈΡ ΝΩΘΡΟΎ ΚΥΝΌΣ')
         );
+        // @codingStandardsIgnoreEnd
     }
 
     /**
@@ -132,10 +134,12 @@ class MbstringTest extends TestCase
      */
     public function testMbConvertCase()
     {
+        // @codingStandardsIgnoreStart
         $this->assertSame(
             'ΤΆΧΙΣΤΗ ΑΛΏΠΗΞ ΒΑΦΉΣ ΨΗΜΈΝΗ ΓΗ, ΔΡΑΣΚΕΛΊΖΕΙ ΥΠΈΡ ΝΩΘΡΟΎ ΚΥΝΌΣ',
             mb_convert_case('Τάχιστη αλώπηξ βαφής ψημένη γη, δρασκελίζει υπέρ νωθρού κυνός', MB_CASE_UPPER, 'UTF-8')
         );
+        // @codingStandardsIgnoreEnd
 
         $this->assertSame(
             'Mr.robot Lives For The Hacking',

@@ -4,7 +4,7 @@ namespace Gmi\PhpTests\Tests\imagick;
 
 use PHPUnit\Framework\TestCase;
 
-use Gmi\PhpTests\Tests\ExtensionChecker;
+use Gmi\PhpTests\ExtensionChecker;
 
 use Imagick;
 
