@@ -54,11 +54,8 @@ XML;
      */
     public function testLoadFile()
     {
-        if (file_exists(__DIR__ . '/Fixtures/my.xml')) {
-            $xml = simplexml_load_file(__DIR__ . '/Fixtures/my.xml');
-        } else {
-            return('Failed to open my.xml file');
-        }
+        $xml = simplexml_load_file(__DIR__ . '/Fixtures/my.xml');
+
         $this->assertInstanceOf(SimpleXMLElement::class, $xml);
     }
 }
