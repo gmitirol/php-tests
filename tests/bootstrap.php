@@ -13,8 +13,8 @@ EOT;
     die($help);
 }
 
-if (PHP_VERSION_ID >= 70300 && !file_exists(__DIR__ . '/.phpunit_tests_patched')) {
-    $adder = new Gmi\PhpTests\PhpunitTestPatcher();
-    $results = $adder->patch(__DIR__);
+if (PHP_VERSION_ID >= 70200 && !file_exists(__DIR__ . '/.phpunit_tests_patched')) {
+    $patcher = new Gmi\PhpTests\PhpunitTestPatcher();
+    $results = $patcher->patch(__DIR__);
     file_put_contents(__DIR__ . '/.phpunit_tests_patched', implode("\n", $results) . "\n");
 }
