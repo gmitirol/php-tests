@@ -27,7 +27,7 @@ class PhpunitTestPatcher
      *
      * @return string[]
      */
-    public function patch(string $directory): array
+    public function patch($directory)
     {
         $results = [];
         $iterator = new RecursiveDirectoryIterator($directory);
