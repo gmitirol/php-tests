@@ -39,10 +39,10 @@ class IconvTest extends TestCase
      */
     public function testIconvTranslit()
     {
-        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Ziži�?ć.Followed by Žluťou�?ký kůň';
+        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Zižić. Followed by Žluťoućký kůň';
         // Converting 'UTF-8' to 'ASCII'
         $converted = iconv('UTF-8', 'ASCII//TRANSLIT', $utf8example);
-        $this->assertSame('Weiss, Gobel, Weiss, Gothe, und Zizicc.Followed by Zlutoucky kun', $converted);
+        $this->assertSame('Weiss, Gobel, Weiss, Gothe, und Zizic. Followed by Zlutoucky kun', $converted);
     }
 
     /**
@@ -50,10 +50,10 @@ class IconvTest extends TestCase
      */
     public function testIconvIgnore()
     {
-        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Ziži�?ć.Followed by Žluťou�?ký kůň';
+        $utf8example = 'Weiß, Göbel, Weiss, Göthe, und Zižić. Followed by Žluťoućký kůň';
         // Converting 'UTF-8' to 'ASCII'
         $converted = iconv('UTF-8', 'ASCII//IGNORE', $utf8example);
-        $this->assertSame('Wei, Gbel, Weiss, Gthe, und Zii.Followed by luouk k', $converted);
+        $this->assertSame('Wei, Gbel, Weiss, Gthe, und Zii. Followed by luouk k', $converted);
     }
 
     /**
@@ -65,10 +65,11 @@ class IconvTest extends TestCase
             $this->markTestSkipped('mb_convert_encoding not available!');
         }
 
-        $utf8example = 'Weiß, Göbel, Weiss, Göthe, ';
+        $utf8example = 'Weiß, Göbel, Weiss, Göthe';
         // Converting 'UTF-8' to 'windows-1252'
         $converted = iconv('UTF-8', 'windows-1252', $utf8example);
 
         $this->assertSame(mb_convert_encoding($utf8example, 'windows-1252', 'UTF-8'), $converted);
     }
 }
+
